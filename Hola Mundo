@@ -1,0 +1,13 @@
+// Autor Marco Vargas
+// Fecha 05.03.15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int main()
+{
+cout<<"Hola Mundo";
+getch();
+return 0;
+}
