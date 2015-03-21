@@ -1,0 +1,26 @@
+// Autor: Marco Vargas
+// Fecha: 21\03\15
+
+#include"stdafx.h"
+#include<iostream>
+#include"conio.h"
+using namespace std;
+
+int main() {
+	float sm,sr,i;
+	
+	cout << "Ingrese Salario Minimo";
+	cin >> sm;
+	cout << "Ingrese Salario Real";
+	cin >> sr;
+	cout << "Ingrese % de Interes";
+	cin >> i;
+	if (sr>=(2*sm)) {
+		i = sr*(i/100);
+	} else {
+		i = 0;
+	}
+	cout << "El Interes a pagar es:" << i;
+	getch();
+	
+}
