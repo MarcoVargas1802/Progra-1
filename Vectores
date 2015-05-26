@@ -1,0 +1,86 @@
+// Ejemplovectores.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector(int c[],int n);
+void mostrar_vector (int c[],int n);
+float promedio (int c[],int n);
+void ordenar(int c[], int n);
+int buscar(int c[], int n,int k);
+
+void main()
+{
+	int vec[MAX],n,p,key;
+	float prom;
+	do {
+		cout<<"Ingrese el numero de elementos";
+		cin>>n;
+	} while ((n<=0) || (n>100));
+	cargar_vector(vec,n);
+	ordenar(vec,n);
+	cout<<"Ingrese el elemento a buscar";
+	cin>>key;
+	p=buscar(vec,n,key);
+	if (p==-1)
+		cout<<"No existe"<<endl;
+	else cout<<"Existe en"<<p;
+	mostrar_vector(vec,n);
+    prom=promedio (vec,n);
+	cout<<"el resultado:"<<prom<<endl;
+	getch();
+}
+
+void cargar_vector(int c[],int n)
+{
+	for (int i=0;i<n;i++)
+	{
+		cout<<"Ingrese el valor de c["<<i<<"]= ";
+		cin>>c[i];
+	}
+}
+
+void mostrar_vector (int c[],int n)
+{
+	for (int i=0;i<n;i++)
+	{
+		cout<<"c["<<i<<"]= ";
+		cout<<c[i]<<endl;
+	}
+}
+float promedio (int c[],int n)
+{
+	float suma=0;
+	for (int i=0;i<n;i++)
+		suma=suma+c[i];
+	suma=(suma/n);
+
+	return suma;
+}
+
+void ordenar(int c[], int n)
+{
+	int AUX; 
+	for(int i=0; i<n-1; i++)
+	   for(int j=i+1; j<n; j++)
+			if(c[i]>c[j])
+			{
+				AUX=c[j];
+				c[j]=c[i];
+				c[i]=AUX;
+			}
+}
+int buscar(int c[], int n,int k)
+{int posi;
+posi=-1;
+for(int i=0; i<n-1; i++)
+	if (k==c[i]) 
+		{posi=i;
+		return posi;}
+return posi;
+}
