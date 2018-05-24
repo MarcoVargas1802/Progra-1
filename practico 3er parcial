@@ -1,0 +1,26 @@
+// 3er parcial.cpp : Defines the entry point for the console application.
+// ejercicio 1
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+float Distancia(float D, float xa,float xb,float ya,float yb);
+
+void main()
+{
+float xa,xb,ya,yb;
+float D;
+cout<<"Ingrese las coordenadas xa, xb, ya, yb";
+cin>>xa>>xb>>ya>>yb;
+Distancia(D, xa, xb, ya ,yb);
+cout<<"La distancia entre puntos es:",D;
+getch();
+}
+
+float Distancia(float D,float xa,float xb,float ya,float yb)
+{D=0;
+D= sqrt(((xa-xb)*(xa-xb))+((ya-yb)*(ya-yb)));
+return D;
+}
